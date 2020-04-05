@@ -8,13 +8,26 @@
     <a-scene embedded arjs>
       <a-marker preset="hiro">
         <a-entity
-          position="0 -1 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="./archive/Butterfly.gltf"
+          log="event: anEvent; message: Hello, Metaverse!"
+          id="butterfly"
+          position="0 0 1"
+          scale="0.8 0.8 0.8"
+          gltf-model="./archive/PUSHILIN_butterfly.gltf"
+          rotation="60 0 0"
+          animation="property: rotation; to: 60 0 360; loop: true; dur: 2000"
         >
         </a-entity>
       </a-marker>
-      <a-entity camera></a-entity>
+      <a-entity camera>
+        <a-entity
+          cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+          material="color: black; shader: flat"
+        >
+        </a-entity>
+      </a-entity>
     </a-scene>
+    <script src="./ar.js"></script>
   </body>
 </html>
