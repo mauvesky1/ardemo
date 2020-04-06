@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 
-  <body style="margin : 0px; overflow: hidden;">
+  <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-entity
         id="text"
@@ -15,19 +15,24 @@
         <a-entity
           id="butterfly"
           position="0 0 1"
-          scale="0.8 0.8 0.8"
+          scale="1 1 1"
           gltf-model="./archive/PUSHILIN_butterfly.gltf"
-          rotation="60 0 0"
-          animation="property: rotation; to: 60 0 360; loop: 1; startEvents: click; dur: 2000;"
+          rotation="60 0 360"
+          animation="property: rotation; to: 60 0 0; loop: 1; startEvents: click; dur: 2000;"
         >
         </a-entity>
       </a-marker>
       <a-entity camera>
         <a-entity
-          cursor="fuse: true; fuseTimeout: 1000"
+          cursor="fuse: false"
           position="0 0 -1"
-          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-          material="color: black; shader: flat"
+          geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.025"
+          material="color: black; opacity: 0.5"
+          animation__enter="property: scale; startEvents: mouseenter; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.7 0.7 0.7"
+          event-set__enter="_event: mouseenter; material.color: green"
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 0.7 0.7 0.7; to: 1 1 1"
+          animation__leave="property: scale; startEvents: mouseleave; delay: 3000; easing: easeInCubic; dur: 500; from: 0.7 0.7 0.7; to: 1 1 1"
+          event-set__leave="_event: mouseleave; material.color: black"
         >
         </a-entity>
       </a-entity>
