@@ -4,11 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css"
+    />
   </head>
   <body>
     <h1>AR DEMO LANDING PAGE</h1>
     <button onclick="location.href='ar.html'" type="button">
       go to ar page
     </button>
+    <button id="sign">This is the button</button>
+    <!-- Here  -->
+    <script src="./ar.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4tz8vEzmfsVvXs2hcKogzIdWECdNeQbc",
+        authDomain: "backend-679e8.firebaseapp.com",
+        databaseURL: "https://backend-679e8.firebaseio.com",
+        projectId: "backend-679e8",
+        storageBucket: "backend-679e8.appspot.com",
+        messagingSenderId: "363772688197",
+        appId: "1:363772688197:web:1b1ae070f6afdaf41eb02c",
+        measurementId: "G-6FSQXQCNBN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const auth = firebase.auth();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css"
+    />
+    <script src="auth.js"></script>
   </body>
 </html>
