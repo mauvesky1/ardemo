@@ -16,6 +16,7 @@
           id="butterfly"
           position="0 0 1"
           scale="1 1 1"
+          gltf-model="./archive/PUSHILIN_butterfly.gltf"
           rotation="360 0 360"
           animation="property: rotation; to: 60 0 0; loop: 3; startEvents: click; dur: 2000;"
         >
@@ -37,5 +38,28 @@
       </a-entity>
     </a-scene>
     <script src="./ar.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4tz8vEzmfsVvXs2hcKogzIdWECdNeQbc",
+        authDomain: "backend-679e8.firebaseapp.com",
+        databaseURL: "https://backend-679e8.firebaseio.com",
+        projectId: "backend-679e8",
+        storageBucket: "backend-679e8.appspot.com",
+        messagingSenderId: "363772688197",
+        appId: "1:363772688197:web:1b1ae070f6afdaf41eb02c",
+        measurementId: "G-6FSQXQCNBN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>

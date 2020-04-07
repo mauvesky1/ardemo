@@ -6,7 +6,7 @@ targetEl.addEventListener("click", function () {
   addToRefObj(targetEl);
   console.log(refObj);
   textEl.setAttribute("text", "value", `Caught: ${refObj[targetEl.id]}`);
-  targetEl.setAttribute("gltf-model", "./archive/PUSHILIN_butterfly.gltf");
+
   targetEl.components.animation.attrValue.enabled = true;
 });
 
